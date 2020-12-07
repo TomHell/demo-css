@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Float text</title>
+		<style>
+			
+			.container {
+				width:500px;
+				height:auto;
+				margin:0 auto;
+				padding:15px;
+				border-radius:16px;
+				border:#000 solid 1px;
+				overflow: hidden;
+			}
+			img {
+				height:300px;
+				float:left;
+				shape-outside: url("ghost.png");
+				shape-margin: 15px;
+				position: relative;
+				bottom:0;
+			}
+			.block {
+				border-radius:16px;
+				background-color:grey;
+				margin-top:95px;
+				padding:25px;
+			}
+			p {
+				color:#fff;
+			}
+			hr {
+				border:solid #2a6d9e 1px;
+			}
+			.author {
+				display: block;
+				text-transform: uppercase;
+				font-weight: bold;
+				color:#2a6d9e;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<img src="ghost.png" alt="ghost">
+			<div class="block">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+				</p>
+				<hr>
+				<span class="author">Firstname Lastname</span>
+			</div>
+		</div>
+	</body>
+</html>
