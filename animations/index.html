@@ -1,0 +1,197 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Animation Counter</title>
+		<style>
+			:root {
+				--number:'1';
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html, body {
+				width:100vw;
+				height:100vh;
+				margin:0;
+				padding:0;
+				font-size:10px;
+			}
+
+			body {
+				background-color:#f7f7f9;
+				padding:15px;
+			}
+
+			.wrapper {
+				width:300px;
+				margin: 0 auto;
+				padding:25px;
+				border:solid #000 1px;
+				border-radius:15px;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column
+			}
+
+			.font {
+				color:#8c7c42;
+				font-weight:bold;
+				font-size:22px;
+				text-align:center;
+			}
+
+			.white {
+				background-color:#fff;
+			}
+
+			.first {
+				padding:5px 15px;
+				position: relative;
+				box-shadow: 2px 4px 10px rgba(0,0,0,0.12);
+				width:50px;
+				display: inline-block;
+				animation: color 16s ease forwards;
+			}
+			
+			.first:before {
+				content:var(--number);
+				animation: counter 16s ease forwards;
+				position: relative;
+			}
+
+			.first span {
+				position: absolute;
+				bottom:0;
+				left:0;
+				background-color:#000;
+				height:1px;
+				width:1px;
+				animation: border-line 16s ease forwards;
+			}
+
+		
+			
+			@keyframes counter {
+				1% {content: "1"}
+				2% {content: "2"}
+				3% {content: "3"}
+				4% {content: "4"}
+				5% {content: "5"}
+				6% {content: "6"}
+				7% {content: "7"}
+				8% {content: "8"}
+				9% {content: "9"}
+				10% {content: "10"}
+				20% {content: "20"}
+				30% {content: "30"}
+				40% {content: "40"}
+				50% {content: "50"}
+				60% {content: "60"}
+				70% {content: "70"}
+				80% {content: "80"}
+				90% {content: "90";left:0;}
+				100% {content: "100";left: -7px;}
+			}
+
+			@keyframes border-line {
+				1% {width: 1px}
+				100% {width: 50px}
+			}
+
+			@keyframes color {
+				90% {
+					opacity:1;
+				}
+				100% {
+					opacity:0.54;
+				}
+			}
+
+			 .label {
+			 	width:50px;
+			 	height:50px;
+			 	border-radius:100%;
+			 	animation: border-round 20s linear infinite;
+			 	display: flex;
+			 	justify-content: center;
+			 	align-items: center;
+			 	border:solid #2a6d9e;
+			 }
+
+			 @keyframes border-round {
+				0%   {border-right:1px}
+				12.5%  {border-right:2px}
+				25%  {border-bottom:1px}
+				37.5%  {border-bottom:2px}
+				50% {border-left:1px}
+				62.5% {border-left:2px}
+				75% {border-top:1px}
+				100% {border-top:2px}
+			}
+
+
+
+			.clip {
+				transform-origin: top center;
+				width:110px;
+				height:110px;
+				background-color:#f3bc34;
+				transition:all 5s;
+				transform:rotate(0deg);
+				position: relative;
+				border-radius:100%;
+				overflow:hidden;
+			}
+			.clip:hover .circle:after {
+				height:0px;
+				transition: height 20s;
+			}
+
+			.clip:hover .circle {
+				height:0px;
+				transition: height 20s;
+			}
+			.circle {
+				width:100px;
+				height:100px;
+				background-color:transparent;
+				border-radius:100%;
+				background-color:#fff;
+				position: absolute;
+				top:5px;
+				left:5px;
+			}
+			.circle:before, .circle:after {
+				content:' ';
+				width:60px;
+				height:120px;
+				background-color:#fff;
+				position: absolute;
+			}
+
+			.circle:before {
+				top:-10px;
+				left:-10px;
+				border:#000 solid 1px;
+			}
+			.circle:after {
+				right:-10px;
+				bottom:-10px;
+				border:#000 solid 1px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="first font white"><span></span></div>
+			<hr>
+			<div class="label font white">1</div>
+			<hr>
+			<div class="clip">
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>
