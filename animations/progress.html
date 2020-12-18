@@ -143,15 +143,7 @@
 				border-radius:100%;
 				overflow:hidden;
 			}
-			.clip:hover .circle:after {
-				height:0px;
-				transition: height 20s;
-			}
-
-			.clip:hover .circle {
-				height:0px;
-				transition: height 20s;
-			}
+	
 			.circle {
 				width:100px;
 				height:100px;
@@ -161,24 +153,25 @@
 				position: absolute;
 				top:5px;
 				left:5px;
-			}
-			.circle:before, .circle:after {
-				content:' ';
-				width:60px;
-				height:120px;
-				background-color:#fff;
-				position: absolute;
+				z-index:2;
 			}
 
-			.circle:before {
-				top:-10px;
-				left:-10px;
-				border:#000 solid 1px;
+			.overlay {
+				background-color: #000;
+				width:1px;
+				height:10px;
+				position: absolute;
+				z-index: 4;
+				transition:width 3s ease-in-out, height 3s 200ms ease-in-out, transform 2s 2s ease-in-out, left 2s 3s ease-in-out;
+				left:55px;
+				top:0;
+				
 			}
-			.circle:after {
-				right:-10px;
-				bottom:-10px;
-				border:#000 solid 1px;
+			.wrapper:hover  .overlay {
+				height:120px;
+				width:150px;
+				left:0;
+				transform: rotate(180deg);
 			}
 
 		</style>
@@ -191,6 +184,7 @@
 			<hr>
 			<div class="clip">
 				<div class="circle"></div>
+				<div class="overlay"></div>
 			</div>
 		</div>
 	</body>
